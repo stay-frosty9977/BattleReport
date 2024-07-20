@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Battle Simulator</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3-geo.v3.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        .territory { stroke: white; stroke-width: 2px; }
+        .territory:hover { fill-opacity: 0.7; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Battle Simulator</h1>
+    <div class="container-fluid">
+        <div id="battle-form">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Army 1</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <input class="form-control" type="number" id="army1-infantry" placeholder="Infantry">
+                        </div>
+                        <div class="col-md-6 offset-md-4"></div>
+                        <div class="col-md-6 mb-2">
+                            <input class="form-control" type="number" id="army1-cavalry" placeholder="Cavalry">
+                        </div>
+                        <div class="col-md-6 offset-md-4"></div>
+                        <div class="col-md-6 mb-2">
+                            <input class="form-control" type="number" id="army1-artillery" placeholder="Artillery">
+                        </div>
+                        <div class="col-md-6 offset-md-4"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2>Army 2</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <input class="form-control" type="number" id="army2-infantry" placeholder="Infantry">
+                        </div>
+                        <div class="col-md-6 offset-md-4"></div>
+                        <div class="col-md-6 mb-2">
+                            <input class="form-control" type="number" id="army2-cavalry" placeholder="Cavalry">
+                        </div>
+                        <div class="col-md-6 offset-md-4"></div>
+                        <div class="col-md-6 mb-2">
+                            <input class="form-control" type="number" id="army2-artillery" placeholder="Artillery">
+                        </div>
+                        <div class="col-md-6 offset-md-4"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <button  type="button" class="btn btn-primary" onclick="simulateBattle()">Simulate Battle</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    Territory
+                    <div id="territory"></div> 
+                </div>
+                <div class="col-6">
+                    <div id="map"></div> 
+                </div>
+                <div class="col-6">
+                    <div id="result"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
